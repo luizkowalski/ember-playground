@@ -8,7 +8,10 @@
     <li>GitHub token: {{session.data.authenticated.authorizationCode}}</li>
   </ul>
   <button {{action 'logout'}}>logout</button>
-{{/if}}
 
-<h2>HEY HEY</h2>
+{{else}}
+<p>
+  Not logged
+</p>
+{{/if}}
 {{outlet}}
