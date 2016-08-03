@@ -19,6 +19,17 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['torii'] = {
+    sessionServiceName: 'session',
+    providers: {
+      'github-oauth2': {
+        apiKey: 'ae4f289d1087fe71eb4d',
+        scope: 'repo',
+        redirectUri: 'http://127.0.0.1:4200/auth'
+      }
+    }
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
