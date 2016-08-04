@@ -5,14 +5,10 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
   session: Ember.inject.service('session'),
   actions: {
     login() {
-      var controller = this.controller
-       this.get('torii').open('github-oauth2').then(function(authData){
-         console.log(authData);
-         controller.set('login', authData);
-         controller.transitionToRoute('auth');
-       }, function(error){
-         console.log(error);
-       });
+      var controller = this.controller;
+      this.get('session').authenticate('authenticator:torii', 'github').then(function(data){
+        controller.transitionToRoute('auth');
+      });
     }
   }
 });

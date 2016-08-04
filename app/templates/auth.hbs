@@ -1,17 +1,12 @@
-{{#if session.isWorking}}
-  One sec while we get you signed in...
-{{/if}}
-
 {{#if session.isAuthenticated}}
   <ul>
     <li>Provider: {{session.data.authenticated.provider}}</li>
     <li>GitHub token: {{session.data.authenticated.authorizationCode}}</li>
   </ul>
-  <button {{action 'logout'}}>logout</button>
+  <button class="btn btn-primary" {{action 'logout'}}>logout</button>
 
 {{else}}
 <p>
   Not logged
 </p>
 {{/if}}
-{{outlet}}
