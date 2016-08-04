@@ -19,17 +19,6 @@ module.exports = function(environment) {
     }
   };
 
-  ENV['torii'] = {
-    sessionServiceName: 'session',
-    providers: {
-      'github-oauth2': {
-        apiKey: 'ae4f289d1087fe71eb4d',
-        scope: 'repo,user:email',
-        redirectUri: 'http://127.0.0.1:4200/auth'
-      }
-    }
-  };
-
   ENV['ember-simple-auth'] = {
     authenticationRoute: '/'
   };
@@ -40,6 +29,16 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV['torii'] = {
+      sessionServiceName: 'session',
+      providers: {
+        'github-oauth2': {
+          apiKey: 'ae4f289d1087fe71eb4d',
+          scope: 'repo,user:email',
+          redirectUri: 'http://127.0.0.1:4200/auth'
+        }
+      }
+    };
   }
 
   if (environment === 'test') {
@@ -54,7 +53,16 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV['torii'] = {
+      sessionServiceName: 'session',
+      providers: {
+        'github-oauth2': {
+          apiKey: 'ca7d7f3a94dc9c26da65',
+          scope: 'repo,user:email',
+          redirectUri: 'https://www.chathub.us/auth'
+        }
+      }
+    };
   }
 
   return ENV;

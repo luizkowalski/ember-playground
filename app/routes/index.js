@@ -6,7 +6,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
   actions: {
     login() {
       var controller = this.controller;
-      this.get('session').authenticate('authenticator:torii', 'github').then(function(data){
+      this.get('session').authenticate('authenticator:torii', 'github').then(function(){
         controller.transitionToRoute('auth');
       });
     }

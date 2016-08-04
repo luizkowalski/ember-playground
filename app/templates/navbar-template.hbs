@@ -13,7 +13,9 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li>{{#link-to "about"}}About{{/link-to}}</li>
-            <li>{{#link-to "auth"}}Dashboard{{/link-to}}</li>
+            {{#if session.isAuthenticated}}
+              <li>{{#link-to "auth"}}Dashboard{{/link-to}}</li>
+            {{/if}}
           </ul>
           <ul class="nav navbar-nav navbar-right">
             {{#if session.isAuthenticated}}
