@@ -1,13 +1,11 @@
 import Ember from 'ember';
-import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
 
-export default Ember.Route.extend(ApplicationRouteMixin, {
-  session: Ember.inject.service('session'),
+export default Ember.Route.extend({
   actions: {
     login() {
-      var controller = this.controller;
-      this.get('session').authenticate('authenticator:torii', 'github').then(function(){
-        controller.transitionToRoute('auth');
+      var route = this;
+      this.get('session').open('github-oauth2').then(function(){
+        route.transitionTo('auth');
       });
     }
   }
