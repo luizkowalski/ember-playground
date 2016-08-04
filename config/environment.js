@@ -24,7 +24,7 @@ module.exports = function(environment) {
     providers: {
       'github-oauth2': {
         apiKey: 'ae4f289d1087fe71eb4d',
-        scope: 'repo',
+        scope: 'repo,user:email',
         redirectUri: 'http://127.0.0.1:4200/auth'
       }
     }
