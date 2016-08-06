@@ -4,25 +4,18 @@ export default Ember.Object.extend({
   open: function(authentication){
     var code = authentication.authorizationCode;
     return new Ember.RSVP.Promise(function(resolve, reject){
-      Ember.$.ajax({
+      Ember.$.ajax('http://127.0.0.1:8080/auth/github/code', {
         type: 'POST',
-        url: 'https://github.com/login/oauth/access_token',
-        data: { 'code': code, 'client_id': 'ae4f289d1087fe71eb4d'  },
+        crossDomain: true,
         dataType: 'json',
-        beforeSend: function (xhr) {
-          xhr.setRequestHeader("Accept", "application/json");
-          xhr.setRequestHeader("Content-Type", "application/json");
-          xhr.setRequestHeader("Access-Control-Allow-Origin", "http://127.0.0.1:4200/");
-        },
+        data: { 'code': code },
         success: Ember.run.bind(null, resolve),
         error: Ember.run.bind(null, reject)
       });
     }).then(function(user){
-      // The returned object is merged onto the session (basically). Here
-      // you may also want to persist the new session with cookies or via
-      // localStorage.
+      console.log(user.body);
       return {
-        currentUser: user
+        currentUser: user.body
       };
     });
   }
