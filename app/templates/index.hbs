@@ -2,7 +2,7 @@
   <h1>Login</h1>
 
   {{#if session.isAuthenticated}}
-    {{#link-to "auth" class="btn" }} Dashboard{{/link-to}}
+    {{#link-to "rooms" class="btn" }} Dashboard{{/link-to}}
   {{else}}
     {{#if session.isWorking}}
       One sec while we get you signed in...
@@ -10,8 +10,4 @@
     <button class="btn btn-primary" {{action "login" }}>Github OAuth2</button>
     {{/if}}
   {{/if}}
-
-
-  Total: {{ total }}
-  <a href="#" {{action "increment"}}>Increment</a>
 </div>

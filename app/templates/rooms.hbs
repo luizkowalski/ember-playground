@@ -1,0 +1,14 @@
+  <ul>
+    <li>Name: {{session.data.authenticated.currentUser.name}}</li>
+    <li>Picture: <img src= {{session.data.authenticated.currentUser.avatar}} style="width: 10%;"/></li>
+  </ul>
+
+  <div class="row">
+    <ul id="room-list">
+      {{#each model key="uid" as |room|}}
+        <li>
+          <label>{{room.uid}}: {{room.name}} ({{room.organization.name}}) </label>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
