@@ -1,0 +1,16 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{room.name}}</h3>
+  </div>
+  <div class="panel-body">
+    {{chat-message}}
+    {{chat-message}}
+    {{chat-message}}
+  </div>
+  <div class="panel-footer">
+    <form accept-charset="UTF-8"  {{action "postMessage" on="submit"}}>
+      {{input type='text' class="form-control" autofocus="true" valueBinding="content"}}
+      {{input type='hidden' value="room.uid" valueBinding="uid"}}
+    </form>
+  </div>
+</div>

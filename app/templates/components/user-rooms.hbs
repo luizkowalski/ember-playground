@@ -1,0 +1,25 @@
+<div>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#rooms" aria-controls="rooms" role="tab" data-toggle="tab">Rooms</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active room-list" id="rooms">
+      <div class="list-group">
+        {{#each rooms key="uid" as |room|}}
+          {{#link-to 'room' room class='list-group-item'}}
+
+            {{#if room.organization }}
+              <span>
+                <img class="avatar-organization-list" src={{room.organization.avatar}} />
+              </span>
+            {{/if}}
+            {{room.name}}
+          {{/link-to}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
