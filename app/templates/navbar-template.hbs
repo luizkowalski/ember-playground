@@ -1,5 +1,5 @@
 <!-- Fixed navbar -->
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -8,14 +8,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          {{#link-to "index" class="navbar-brand" }}Home{{/link-to}}
+          {{#link-to "index" class="navbar-brand" }}<i class="fa fa-github-square" aria-hidden="true"></i>
+ Chathub{{/link-to}}
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li>{{#link-to "about"}}About{{/link-to}}</li>
             {{#if session.isAuthenticated}}
               <li>{{#link-to "rooms"}}Dashboard{{/link-to}}</li>
             {{/if}}
+            <li>{{#link-to "about"}}About{{/link-to}}</li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             {{#if session.isAuthenticated}}

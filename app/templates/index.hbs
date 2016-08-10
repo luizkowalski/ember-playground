@@ -1,13 +1,18 @@
-<div class="jumbotron">
-  <h1>Login</h1>
-
-  {{#if session.isAuthenticated}}
-    {{#link-to "rooms" class="btn" }} Dashboard{{/link-to}}
-  {{else}}
-    {{#if session.isWorking}}
-      One sec while we get you signed in...
-    {{else}}
-    <button class="btn btn-primary" {{action "login" }}>Github OAuth2</button>
-    {{/if}}
-  {{/if}}
+{{#if session.isAuthenticated}}
+  {{#link-to "rooms" class="btn" }} Dashboard{{/link-to}}
+{{else}}
+{{#if session.isWorking}}
+One sec while we get you signed in...
+{{else}}
+<div class="col-md-8 col-md-offset-2">
+  <div class="get-in-touch">
+    <h3 class="text-center">Start chat now</h3>
+    <hr/>
+    <div class="form-group">
+      <button style="margin-left: 37%;" class="btn btn-default" {{action "login" }}><i class="fa fa-github-square" aria-hidden="true"></i>
+ Signup with Github</button>
+    </div>
+  </div>
 </div>
+{{/if}}
+{{/if}}
