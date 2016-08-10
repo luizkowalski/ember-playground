@@ -1,18 +1,18 @@
-{{#if session.isAuthenticated}}
-  {{#link-to "rooms" class="btn" }} Dashboard{{/link-to}}
-{{else}}
 {{#if session.isWorking}}
 One sec while we get you signed in...
 {{else}}
 <div class="col-md-8 col-md-offset-2">
   <div class="get-in-touch">
-    <h3 class="text-center">Start chat now</h3>
+    <h3 class="text-center">Login with your github account</h3>
     <hr/>
     <div class="form-group">
+      {{#if session.isAuthenticated}}
+        {{#link-to "rooms" style="margin-left: 37%;" class="btn btn-default" }} Dashboard{{/link-to}}
+      {{else}}
       <button style="margin-left: 37%;" class="btn btn-default" {{action "login" }}><i class="fa fa-github-square" aria-hidden="true"></i>
  Signup with Github</button>
+    {{/if}}
     </div>
   </div>
 </div>
-{{/if}}
 {{/if}}

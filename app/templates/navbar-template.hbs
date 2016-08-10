@@ -8,14 +8,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+          {{#if session.isAuthenticated}}
+          {{#link-to "rooms" class="navbar-brand" }}<i class="fa fa-github-square" aria-hidden="true"></i>
+ Chathub{{/link-to}}
+          {{else}}
           {{#link-to "index" class="navbar-brand" }}<i class="fa fa-github-square" aria-hidden="true"></i>
  Chathub{{/link-to}}
+          {{/if}}
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            {{#if session.isAuthenticated}}
-              <li>{{#link-to "rooms"}}Dashboard{{/link-to}}</li>
-            {{/if}}
             <li>{{#link-to "about"}}About{{/link-to}}</li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
