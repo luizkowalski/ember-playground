@@ -19,7 +19,6 @@ export default GithubOauth2Provider.extend({
           error: Ember.run.bind(null, reject)
         });
       }).then(function(user){
-        console.log(user.body);
         return {
           currentUser: user.body
         };

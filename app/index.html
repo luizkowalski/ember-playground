@@ -23,5 +23,18 @@
 
     {{content-for "body-footer"}}
     <script src=" //maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBonZMiZ5fbkg0Me4zEDQxH_fID1phYiGY",
+        authDomain: "chathub-48840.firebaseapp.com",
+        databaseURL: "https://chathub-48840.firebaseio.com",
+        storageBucket: "chathub-48840.appspot.com",
+      };
+      firebase.initializeApp(config);
+    </script>
+
   </body>
 </html>
