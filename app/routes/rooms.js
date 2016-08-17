@@ -4,8 +4,8 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 export default Ember.Route.extend(AuthenticatedRouteMixin,{
   session: Ember.inject.service('session'),
   model(){
-    var rooms = this.store.findAll('room');
-    return rooms;
+    var organizations = this.store.findAll('organization');
+    return organizations;
   },
   actions: {
     logout(){

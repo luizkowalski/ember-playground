@@ -1,9 +1,13 @@
 <div class="row">
-  <div class="col-md-3">
+  <div class="col-md-3 user-card">
     {{user-card user=session.data.authenticated.currentUser}}
   </div>
 
   <div class="col-md-8">
-    {{user-rooms rooms=model}}
+    <div class="panel panel-default">
+      <div class="panel-body">
+        {{user-rooms organizations=model}}
+      </div>
+    </div>
   </div>
 </div>

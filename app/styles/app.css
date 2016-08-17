@@ -1,3 +1,25 @@
+body{
+  background-color: #8aabc4;
+}
+
+a.list-group-item {
+  color: #6d513c;
+}
+
+.h1, .h2, .h3, h1, h2, h3, a, .btn {
+  color: #6d513c;
+}
+
+.message{
+ padding: 4px;
+}
+
+#message-body {
+  height: 100%;
+  max-height: 430px;
+  overflow: auto;
+}
+
 .outlet {
   margin-top: 65px;
 }
@@ -12,6 +34,10 @@
 
 .avatar-organization-list{
   width: 5%;
+}
+
+.user-card {
+  background-color: white;
 }
 .card {
   padding-top: 20px;

@@ -1,11 +1,11 @@
-<div class="media">
+<div class="media message">
   <div class="media-left">
     <a href="#">
-      <img class="media-object" src="" alt="...">
+      <img class="media-object" src={{message.sender.avatar}} style="width: 35px;" >
     </a>
   </div>
   <div class="media-body">
-    <h4 class="media-heading">Media heading</h4>
-    ...
+    <h4 class="media-heading">{{message.sender.name}} <small>@{{message.sender.login}}</small></h4>
+    {{message.content}}
   </div>
 </div>

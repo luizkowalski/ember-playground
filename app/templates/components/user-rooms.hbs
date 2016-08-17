@@ -1,25 +1,30 @@
 <div>
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#rooms" aria-controls="rooms" role="tab" data-toggle="tab">Rooms</a></li>
+    {{#each organizations key="uid" as |organization index|}}
+      <li role="presentation" class="{{active-class index}}">
+      <a href="#{{organization.uid}}" aria-controls={{organization.uid}} role="tab" data-toggle="tab">{{organization.name}}</a>
+    </li>
+    {{/each}}
   </ul>
 
   <!-- Tab panes -->
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active room-list" id="rooms">
-      <div class="list-group">
-        {{#each rooms key="uid" as |room|}}
-          {{#link-to 'room' room class='list-group-item'}}
-
-            {{#if room.organization }}
-              <span>
-                <img class="avatar-organization-list" src={{room.organization.avatar}} />
-              </span>
-            {{/if}}
-            {{room.name}}
-          {{/link-to}}
-        {{/each}}
+    {{#each organizations key="uid" as |org index|}}
+      <div role="tabpanel" class="tab-pane room-list {{active-class index}}" id={{org.uid}}>
+        <div class="list-group">
+            {{#each  org.rooms as |room|}}
+              <a href="room/{{room.uid}}" class="list-group-item">
+                {{#if room.organization }}
+                  <span>
+                    <img class="avatar-organization-list" src={{room.organization.avatar}} />
+                  </span>
+                {{/if}}
+                {{room.name}}
+              </a>
+            {{/each}}
+        </div>
       </div>
-    </div>
+    {{/each}}
   </div>
 </div>
